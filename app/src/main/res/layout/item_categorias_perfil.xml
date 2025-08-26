@@ -41,10 +41,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
+        android:contentDescription="Botão de Navegação"
         app:layout_constraintBottom_toBottomOf="@+id/tvDescricaoCategoria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvNomeCategoria"
-        app:srcCompat="@drawable/ic_seta_direita" />
+        app:srcCompat="@drawable/ic_seta_direita"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/imageView2"

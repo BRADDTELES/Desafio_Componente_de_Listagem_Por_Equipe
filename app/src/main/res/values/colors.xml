@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cinza">#717171</color>
     <color name="cinza_claro">#83DBDADA</color>
+    <color name="cinza_mais_claro">#83E7E7E7</color>
     <color name="roxo_claro">#9C27B0</color>
+    <color name="vermelho">#EF1111</color>
 </resources>

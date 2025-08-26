@@ -31,7 +31,8 @@ class CategoriaAdapter(
 
     inner class CategoriasViewHolder(private val binding: ItemCategoriasPerfilBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(categoria: Categorias) {
-
+            binding.tvNomeCategoria.text = categoria.nome
+            binding.tvDescricaoCategoria.text = categoria.descricao
         }
     }
 }

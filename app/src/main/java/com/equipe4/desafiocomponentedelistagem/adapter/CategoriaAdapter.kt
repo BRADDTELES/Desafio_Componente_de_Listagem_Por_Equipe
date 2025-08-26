@@ -42,13 +42,13 @@ class CategoriaAdapter(
 
             if (categoria.isNotification == true){
                 binding.imageView2.visibility = View.VISIBLE
-                binding.tvNotificationCategoria.text = "%.0f".format(categoria.qtdNotification)
+                binding.tvNotificationCategoria.text = categoria.qtdNotification.toString()
             } else {
                 binding.imageView2.visibility = View.GONE
                 binding.tvNotificationCategoria.text = ""
             }
 
-            binding.imgNavegar.setOnClickListener { onClick(categoria) }
+            binding.root.setOnClickListener { onClick(categoria) }
         }
     }
 }

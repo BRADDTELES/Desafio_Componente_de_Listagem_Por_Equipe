@@ -8,6 +8,7 @@ import com.equipe4.desafiocomponentedelistagem.adapter.CategoriaAdapter
 import com.equipe4.desafiocomponentedelistagem.databinding.ActivityPerfilBinding
 import com.equipe4.desafiocomponentedelistagem.model.Categorias
 import com.equipe4.desafiocomponentedelistagem.model.Usuario
+import androidx.recyclerview.widget.LinearLayoutManager
 
 class PerfilActivity : AppCompatActivity() {
 
@@ -44,9 +45,10 @@ class PerfilActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         categoriaAdapter = CategoriaAdapter{ categoria ->
-            Toast.makeText(this, "Catrgoria clicada ${categoria.nome} para Nevegação", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Clicado em ${categoria.nome}", Toast.LENGTH_SHORT).show()
         }
         binding.rvCategorias.adapter = categoriaAdapter
+        binding.rvCategorias.layoutManager = LinearLayoutManager(this)
         categoriaAdapter.submitList(listaCategorias)
     }
 }

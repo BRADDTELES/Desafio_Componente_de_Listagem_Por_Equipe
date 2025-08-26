@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.equipe4.desafiocomponentedelistagem"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.equipe4.desafiocomponentedelistagem"

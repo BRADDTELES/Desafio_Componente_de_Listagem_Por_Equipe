@@ -120,11 +120,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:background="@android:color/transparent"
-                android:tint="@color/vermelho"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_seta_direita" />
+                app:srcCompat="@drawable/ic_seta_direita"
+                app:tint="@color/vermelho"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -147,8 +148,8 @@
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:tint="@color/roxo_claro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_qr_code" />
+        app:srcCompat="@drawable/ic_qr_code"
+        app:tint="@color/roxo_claro" />
 </androidx.constraintlayout.widget.ConstraintLayout>

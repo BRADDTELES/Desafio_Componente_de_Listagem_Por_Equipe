@@ -1,6 +1,7 @@
 package com.equipe4.desafiocomponentedelistagem.view
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.equipe4.desafiocomponentedelistagem.R
@@ -28,8 +29,22 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        setupBotaoVoltar()
         setupRecyclerView()
+        setupConfirmarPedido()
 
+    }
+
+    private fun setupConfirmarPedido() {
+        binding.btnConfirmarPedido.setOnClickListener {
+            Toast.makeText(this, "Clicado, Botão de Confirmar Pedido", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun setupBotaoVoltar() {
+        binding.btnVoltar.setOnClickListener {
+            Toast.makeText(this, "Clicado, Botão de Voltar", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setupRecyclerView() {

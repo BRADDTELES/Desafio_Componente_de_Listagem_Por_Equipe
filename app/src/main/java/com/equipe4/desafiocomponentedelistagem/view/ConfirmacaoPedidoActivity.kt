@@ -33,8 +33,9 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        itemAdapter = ItemProdutoOpcionaisAdapter(listaProdutosComOpcionais)
+        itemAdapter = ItemProdutoOpcionaisAdapter()
         binding.rvItens.layoutManager = LinearLayoutManager(this)
         binding.rvItens.adapter = itemAdapter
+        itemAdapter.submitList(listaProdutosComOpcionais)
     }
 }

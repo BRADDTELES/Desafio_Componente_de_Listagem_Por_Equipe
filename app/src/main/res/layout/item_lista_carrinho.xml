@@ -44,7 +44,7 @@
         android:id="@+id/tvPrecoProduto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="2dp"
         android:fontFamily="@font/lato_bold"
         android:text="89,90"
         android:textColor="@color/black"

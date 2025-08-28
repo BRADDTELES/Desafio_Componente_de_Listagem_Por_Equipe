@@ -21,10 +21,10 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
     private lateinit var itemAdapter: ItemProdutoOpcionaisAdapter
 
     private val listaProdutosComOpcionais = listOf<ItemProdutoOpcionais>(
-        ItemProdutoOpcionais(1, "Kookaburra Aussie Tizer", "Croquetes de Kookaburra (crocantes por fora com recheio suculento de frango desfiado com tempero especial do Chef de Alto Nível)", R.drawable.kookaburra_aussie_tizer, 79.90),
+        ItemProdutoOpcionais(1, "Kookaburra Aussie Tizer", "Crocantes por fora com recheio suculento de frango desfiado com tempero especial do Chef de Alto Nível", R.drawable.kookaburra_aussie_tizer, 79.90),
         ItemProdutoOpcionais(2, "Bloomin’ Onion", "Nossa famosa cebola gigante e dourada", R.drawable.bloomin_onion_outback, 49.90),
-        ItemProdutoOpcionais(3, "Brownies from Down Under Ice Cream", "Uma camada do nosso brownie com calda de doce de leite Havanna e outra do brownie Havanna com calda de chocolate, servidas com uma bola de sorvete. ", R.drawable.choco_banoffee_outback, 29.90),
-        ItemProdutoOpcionais(4, "Batata Fritas", "Batatas fritas preparadas ao melhor aussie style.", R.drawable.fritas_outback, 30.90),
+        ItemProdutoOpcionais(3, "Brownies from Down Under Ice Cream", "Uma camada com calda de doce de leite Havanna e outra com calda de chocolate, servidas com uma bola de sorvete", R.drawable.choco_banoffee_outback, 29.90),
+        ItemProdutoOpcionais(4, "Batata Fritas", "Batatas fritas preparadas ao melhor aussie style", R.drawable.fritas_outback, 30.90),
         ItemProdutoOpcionais(5, "Thunder Brownies", "O delicioso brownie com nozes do nosso famoso Thunder", R.drawable.brownie_outback, 14.90),
         ItemProdutoOpcionais(6, "Chá Preto", "Tradicional", R.drawable.cha_preto_tradicional_outback, 13.90),
     )

@@ -41,6 +41,7 @@ android {
 
 dependencies {
 
+    implementation(libs.shimmer)
     implementation(libs.glide)
     implementation(libs.imageslideshow)
     implementation(libs.androidx.core.ktx)

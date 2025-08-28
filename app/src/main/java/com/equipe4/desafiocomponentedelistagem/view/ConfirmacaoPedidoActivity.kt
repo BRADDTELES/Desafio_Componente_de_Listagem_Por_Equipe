@@ -1,6 +1,9 @@
 package com.equipe4.desafiocomponentedelistagem.view
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,11 +21,12 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
     private lateinit var itemAdapter: ItemProdutoOpcionaisAdapter
 
     private val listaProdutosComOpcionais = listOf<ItemProdutoOpcionais>(
-        ItemProdutoOpcionais(1, "Carne", "Prato mais pedido da casa", R.drawable.carne, 59.90),
-        ItemProdutoOpcionais(2, "Choco Banoffee", "Delicioso e cremoso", R.drawable.choco_banoffee_outback, 15.10),
-        ItemProdutoOpcionais(3, "Brownie", "Chocolate", R.drawable.brownie_outback, 6.90),
-        ItemProdutoOpcionais(4, "Chá Preto", "Tradicional", R.drawable.cha_preto_tradicional_outback, 9.00),
-        ItemProdutoOpcionais(5, "Batata Fritas", "", R.drawable.fritas_outback, 9.10),
+        ItemProdutoOpcionais(1, "Kookaburra Aussie Tizer", "Croquetes de Kookaburra (crocantes por fora com recheio suculento de frango desfiado com tempero especial do Chef de Alto Nível)", R.drawable.kookaburra_aussie_tizer, 79.90),
+        ItemProdutoOpcionais(2, "Bloomin’ Onion", "Nossa famosa cebola gigante e dourada", R.drawable.bloomin_onion_outback, 49.90),
+        ItemProdutoOpcionais(3, "Brownies from Down Under Ice Cream", "Uma camada do nosso brownie com calda de doce de leite Havanna e outra do brownie Havanna com calda de chocolate, servidas com uma bola de sorvete. ", R.drawable.choco_banoffee_outback, 29.90),
+        ItemProdutoOpcionais(4, "Batata Fritas", "Batatas fritas preparadas ao melhor aussie style.", R.drawable.fritas_outback, 30.90),
+        ItemProdutoOpcionais(5, "Thunder Brownies", "O delicioso brownie com nozes do nosso famoso Thunder", R.drawable.brownie_outback, 14.90),
+        ItemProdutoOpcionais(6, "Chá Preto", "Tradicional", R.drawable.cha_preto_tradicional_outback, 13.90),
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +34,20 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupBotaoVoltar()
-        setupRecyclerView()
+        calcularEAtualizarTotais()
         setupConfirmarPedido()
+        setupShimmerFacebook()
 
+    }
+
+    private fun calcularEAtualizarTotais() {
+        val subtotal = listaProdutosComOpcionais.sumOf { it.preco }
+        val taxaEntrega = 9.90
+        val total = subtotal + taxaEntrega
+
+        binding.tvSubTotal.text = "${"%.2f".format(subtotal)}"
+        binding.tvTaxaEntrega.text = "R$ ${"%.2f".format(taxaEntrega)}"
+        binding.tvTotal.text = "R$ ${"%.2f".format(total)}"
     }
 
     private fun setupConfirmarPedido() {
@@ -52,5 +67,22 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
         binding.rvItens.layoutManager = LinearLayoutManager(this)
         binding.rvItens.adapter = itemAdapter
         itemAdapter.submitList(listaProdutosComOpcionais)
+    }
+
+    private fun setupShimmerFacebook() {
+        binding.shimmerViewContainer.startShimmer()
+
+        // Simula um tempo de carregamento de 2 segundos
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.shimmerViewContainer.stopShimmer()
+            binding.shimmerViewContainerTextPrice.stopShimmer()
+            binding.shimmerViewContainer.visibility = View.GONE
+            binding.shimmerViewContainerTextPrice.visibility = View.GONE
+            binding.rvItens.visibility = View.VISIBLE
+            binding.tvSubTotal.visibility = View.VISIBLE
+            binding.tvTaxaEntrega.visibility = View.VISIBLE
+            binding.tvTotal.visibility = View.VISIBLE
+            setupRecyclerView()
+        }, 3000)
     }
 }

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Desafio Componente de Listagem</string>
+
+    <string name="label_back">Voltar</string>
+    <string name="outback_steakhouse">Outback steakhouse</string>
+    <string name="restaurante">Restaurante</string>
+    <string name="destaque">Destaque</string>
+    <string name="produtos">Produtos</string>
+
 </resources>

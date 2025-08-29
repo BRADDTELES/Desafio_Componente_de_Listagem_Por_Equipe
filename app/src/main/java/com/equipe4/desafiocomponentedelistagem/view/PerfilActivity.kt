@@ -21,12 +21,12 @@ class PerfilActivity : AppCompatActivity() {
     private val usuario = Usuario(1, "Jamilton Damasceno")
 
     private val listaCategorias = listOf<Categorias>(
-        Categorias(1, "Conversas", "Meu histórico de conversas", R.drawable.ic_conversas, true, 6),
+        Categorias(1, "Conversas", "Meu histórico de conversas", R.drawable.ic_conversas, true, 4),
         Categorias(2, "Notificações", "Minha central  de notificações", R.drawable.ic_notificacao, true, 12),
         Categorias(3, "Dados da conta", "Minhas informações da conta", R.drawable.ic_dados_da_conta, false),
         Categorias(4, "Pagamentos", "Meus saldos e cartões", R.drawable.ic_cartoes, false),
         Categorias(5, "Clube iFood", "Meus benefícios exclusivos", R.drawable.ic_diamante, false),
-        Categorias(6, "Cupons", "Meus cupons de desconto", R.drawable.ic_cupons, false),
+        Categorias(6, "Cupons", "Meus cupons de desconto", R.drawable.ic_cupons, true, 5),
         Categorias(7, "Código de entrega", "Edite seu código de entrega", R.drawable.ic_codigo_entrega, false),
     )
 

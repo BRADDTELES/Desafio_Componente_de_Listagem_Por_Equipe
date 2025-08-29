@@ -13,7 +13,7 @@
         android:theme="@style/Theme.DesafioComponenteDeListagem"
         tools:targetApi="31">
         <activity
-            android:name=".view.PerfilActivity"
+            android:name=".view.ConfirmacaoPedidoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -171,6 +171,17 @@
             tools:itemCount="7"
             tools:listitem="@layout/item_categorias_perfil" />
 
+        <include
+            android:id="@+id/custom_notification"
+            layout="@layout/layout_shimmer_notification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_direita"
+            app:layout_constraintStart_toStartOf="@+id/guideline_esquerda" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

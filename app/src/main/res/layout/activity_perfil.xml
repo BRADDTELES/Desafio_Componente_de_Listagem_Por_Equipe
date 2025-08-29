@@ -142,7 +142,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_seta_direita"
-                    app:tint="@color/vermelho_layout"
+                    app:tint="@color/icon_tint_color"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="icon_tint_color">#FFFFFFFF</color> <!--Cor do icone da seta para direita ser vermelho no modo claro e branco no modo escuro.-->
+</resources>

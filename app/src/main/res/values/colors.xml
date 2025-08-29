@@ -16,6 +16,7 @@
     <color name="light_background">@color/white</color>
     <color name="light_surface">@color/white</color>
     <color name="light_onSurface">@color/black</color>
+    <color name="icon_tint_color">@color/vermelho_layout</color> <!--Cor do icone da seta para direita ser vermelho no modo claro e branco no modo escuro.-->
 
     <!-- ========== CORES PARA O TEMA ESCURO (DARK) ========== -->
     <color name="dark_primary">@color/vermelho_layout</color>

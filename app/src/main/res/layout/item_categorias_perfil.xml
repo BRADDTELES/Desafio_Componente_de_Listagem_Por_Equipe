@@ -14,7 +14,8 @@
         android:layout_height="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_conversas" />
+        app:srcCompat="@drawable/ic_conversas"
+        app:tint="?attr/colorOnSurface"/>
 
     <TextView
         android:id="@+id/tvNomeCategoria"
@@ -49,6 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvNomeCategoria"
         app:srcCompat="@drawable/ic_seta_direita"
+        app:tint="?attr/colorOnSurface"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView

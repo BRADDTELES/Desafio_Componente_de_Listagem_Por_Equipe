@@ -1,5 +1,6 @@
 [versions]
 agp = "8.10.1"
+glide = "4.16.0"
 imageslideshow = "0.1.2"
 kotlin = "2.0.21"
 coreKtx = "1.17.0"
@@ -10,9 +11,12 @@ appcompat = "1.7.1"
 material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
+shimmer = "0.5.0"
+legacySupportV4 = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 imageslideshow = { module = "com.github.denzcoskun:ImageSlideshow", version.ref = "imageslideshow" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -21,6 +25,8 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -41,6 +41,7 @@ android {
 
 dependencies {
     implementation(libs.glide)
+    implementation(libs.androidx.legacy.support.v4)
     annotationProcessor(libs.glide.compiler)
     implementation(libs.imageslideshow)
     implementation(libs.androidx.core.ktx)

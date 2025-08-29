@@ -9,7 +9,6 @@
     <color name="cinza_placeholder">#EFD4D4</color>
     <color name="cinza_clarinho">#F6F3F5</color>
     <color name="vermelho_layout">#EB1C2D</color>
-    <color name="verde_snackbar">#66BB6A</color>
 
     <!-- ========== CORES PARA O TEMA CLARO (LIGHT) ========== -->
     <color name="light_primary">@color/vermelho_layout</color>

@@ -1,19 +1,14 @@
 package com.equipe4.desafiocomponentedelistagem.view
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.equipe4.desafiocomponentedelistagem.R
 import com.equipe4.desafiocomponentedelistagem.adapter.CategoriaAdapter
 import com.equipe4.desafiocomponentedelistagem.databinding.ActivityPerfilBinding
 import com.equipe4.desafiocomponentedelistagem.model.Categorias
 import com.equipe4.desafiocomponentedelistagem.model.Usuario
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
 
 class PerfilActivity : AppCompatActivity() {
 
@@ -49,52 +44,11 @@ class PerfilActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        categoriaAdapter = CategoriaAdapter{ categoria, position ->
-            when (position) {
-                0 -> {
-                    val snackbar = Snackbar.make(binding.root, "Navegar para a Tela Inicial Restaurantes",
-                        Snackbar.LENGTH_SHORT)
-                    snackbar.setBackgroundTint(ContextCompat.getColor(this, R.color.verde_snackbar)) // Mudar a cor de fundo
-                    snackbar.setTextColor(ContextCompat.getColor(this, R.color.white)) // Mudar a cor do texto da mensagem
-                    snackbar.setAction("OK") {
-                        // Este bloco é executado se o usuário clicar no botão "OK" ou pode ficar vazio se for apenas para fechar o snackbar.
-                    } // Adicionar um botão de ação (ex: "OK") e definir a cor do texto dele
-                    snackbar.setActionTextColor(ContextCompat.getColor(this, R.color.white))
-                        .show()
-                }
-                else -> {
-                    val notificationBinding = binding.customNotification
-
-                    //notificationBinding.root.visibility = View.VISIBLE
-                    notificationBinding.shimmerViewContainer.startShimmer()
-
-                    animarEntradaNotificacao()
-
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        notificationBinding.root.visibility = View.GONE
-                        notificationBinding.shimmerViewContainer.stopShimmer()
-                    }, 4000)
-
-                }
-            }
+        categoriaAdapter = CategoriaAdapter{ categoria ->
+            Toast.makeText(this, "Clicado em ${categoria.nome}", Toast.LENGTH_SHORT).show()
         }
         binding.rvCategorias.adapter = categoriaAdapter
         binding.rvCategorias.layoutManager = LinearLayoutManager(this)
         categoriaAdapter.submitList(listaCategorias)
-    }
-
-    private fun animarEntradaNotificacao() {
-        val notificacaoView = binding.customNotification.root
-
-        notificacaoView.alpha = 0f
-        notificacaoView.translationX = -50f
-
-        notificacaoView.visibility = View.VISIBLE
-
-        notificacaoView.animate()
-            .alpha(1f)
-            .translationX(0f)
-            .setDuration(1000)
-            .start()
     }
 }

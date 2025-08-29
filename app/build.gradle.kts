@@ -40,8 +40,6 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.shimmer)
     implementation(libs.glide)
     implementation(libs.androidx.legacy.support.v4)
     annotationProcessor(libs.glide.compiler)

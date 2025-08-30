@@ -71,7 +71,7 @@
         app:srcCompat="@drawable/picles" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imageViewMenosOpcional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -89,12 +89,12 @@
         android:text="0"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView10"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewAddOpcional"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageViewAddOpcional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

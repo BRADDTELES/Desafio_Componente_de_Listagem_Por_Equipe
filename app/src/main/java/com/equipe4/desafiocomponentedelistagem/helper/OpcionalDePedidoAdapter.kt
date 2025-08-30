@@ -12,7 +12,7 @@ import com.equipe4.desafiocomponentedelistagem.view.DetalhesProdutoActivity
 class OpcionalDePedidoAdapter(    private val listaOpcionais:List<Opcional>,
                                   private val clique: (Double)->Unit): RecyclerView.Adapter<OpcionalDePedidoAdapter.OpcionalViewHolder>() {
 
-    //private var listaOpcionais= mutableListOf<Opcional>()
+
     private var valorTotalOpcionais:Double=0.0
 
     inner class OpcionalViewHolder(val binding: OpcionalItemLayoutBinding): RecyclerView.ViewHolder(binding.root){

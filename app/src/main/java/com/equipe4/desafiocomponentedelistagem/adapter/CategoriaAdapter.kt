@@ -13,7 +13,7 @@ import com.equipe4.desafiocomponentedelistagem.diffcallback.CategoriaDiffCallbac
 import com.equipe4.desafiocomponentedelistagem.model.Categorias
 
 class CategoriaAdapter(
-    private val onClick: (Categorias) -> Unit
+    private val onClick: (categoria: Categorias, position: Int) -> Unit
 ) : ListAdapter<Categorias, CategoriaAdapter.CategoriasViewHolder>(
     CategoriaDiffCallback()
 ) {
@@ -30,12 +30,12 @@ class CategoriaAdapter(
         position: Int
     ) {
         val categoria = getItem(position)
-        holder.bind(categoria)
+        holder.bind(categoria, position)
     }
 
     inner class CategoriasViewHolder(private val binding: ItemCategoriasPerfilBinding) : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
-        fun bind(categoria: Categorias) {
+        fun bind(categoria: Categorias, position: Int) {
             Glide.with(binding.imgIconeCategoria).load(categoria.icone).centerCrop().placeholder(R.drawable.fundo_perfil).into(binding.imgIconeCategoria)
             binding.tvNomeCategoria.text = categoria.nome
             binding.tvDescricaoCategoria.text = categoria.descricao
@@ -48,7 +48,12 @@ class CategoriaAdapter(
                 binding.tvNotificationCategoria.text = ""
             }
 
-            binding.root.setOnClickListener { onClick(categoria) }
+            if (position == 0) {
+                binding.root.setOnClickListener { onClick(categoria, position) }
+            } else {
+                binding.root.setOnClickListener(null)
+                binding.root.isClickable = false
+            }
         }
     }
 }

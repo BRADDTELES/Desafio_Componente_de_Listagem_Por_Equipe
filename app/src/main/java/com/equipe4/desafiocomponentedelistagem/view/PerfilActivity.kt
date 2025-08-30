@@ -1,14 +1,17 @@
 package com.equipe4.desafiocomponentedelistagem.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.equipe4.desafiocomponentedelistagem.R
 import com.equipe4.desafiocomponentedelistagem.adapter.CategoriaAdapter
 import com.equipe4.desafiocomponentedelistagem.databinding.ActivityPerfilBinding
 import com.equipe4.desafiocomponentedelistagem.model.Categorias
 import com.equipe4.desafiocomponentedelistagem.model.Usuario
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 
 class PerfilActivity : AppCompatActivity() {
 
@@ -44,8 +47,12 @@ class PerfilActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        categoriaAdapter = CategoriaAdapter{ categoria ->
-            Toast.makeText(this, "Clicado em ${categoria.nome}", Toast.LENGTH_SHORT).show()
+        categoriaAdapter = CategoriaAdapter{ categoria, position ->
+            startActivity(Intent(this, ConfirmacaoPedidoActivity::class.java))
+            /*val snackbar = Snackbar.make(binding.root, "Item ${categoria.nome} navegando para a Tela Inicial", Snackbar.LENGTH_SHORT)
+            snackbar.setBackgroundTint(ContextCompat.getColor(this, R.color.verde_snackbar))
+                snackbar.setTextColor(ContextCompat.getColor(this, R.color.white))
+                .show()*/
         }
         binding.rvCategorias.adapter = categoriaAdapter
         binding.rvCategorias.layoutManager = LinearLayoutManager(this)

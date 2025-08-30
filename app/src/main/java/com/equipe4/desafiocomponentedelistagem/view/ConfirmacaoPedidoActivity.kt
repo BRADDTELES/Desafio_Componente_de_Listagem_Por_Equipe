@@ -1,16 +1,19 @@
 package com.equipe4.desafiocomponentedelistagem.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.equipe4.desafiocomponentedelistagem.R
 import com.equipe4.desafiocomponentedelistagem.adapter.ItemProdutoOpcionaisAdapter
 import com.equipe4.desafiocomponentedelistagem.databinding.ActivityConfirmacaoPedidoBinding
 import com.equipe4.desafiocomponentedelistagem.model.ItemProdutoOpcionais
+import com.google.android.material.snackbar.Snackbar
 
 class ConfirmacaoPedidoActivity : AppCompatActivity() {
 
@@ -52,13 +55,22 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
 
     private fun setupConfirmarPedido() {
         binding.btnConfirmarPedido.setOnClickListener {
-            Toast.makeText(this, "Clicado, Botão de Confirmar Pedido", Toast.LENGTH_SHORT).show()
+            val snackbar = Snackbar.make(binding.root, "Pedido confirmado com sucesso!", Snackbar.LENGTH_SHORT)
+            snackbar.setBackgroundTint(ContextCompat.getColor(this, R.color.verde_snackbar))
+            snackbar.setTextColor(ContextCompat.getColor(this, R.color.white))
+                .show()
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                startActivity(Intent(this, PerfilActivity::class.java))
+                finish()
+            }, 1500)
+
         }
     }
 
     private fun setupBotaoVoltar() {
         binding.btnVoltar.setOnClickListener {
-            Toast.makeText(this, "Clicado, Botão de Voltar", Toast.LENGTH_SHORT).show()
+            finish()
         }
     }
 

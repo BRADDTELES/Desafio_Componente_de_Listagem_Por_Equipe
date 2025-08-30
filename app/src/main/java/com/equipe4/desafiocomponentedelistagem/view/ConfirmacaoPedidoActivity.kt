@@ -1,6 +1,8 @@
 package com.equipe4.desafiocomponentedelistagem.view
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -53,18 +55,24 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
         binding.tvTotal.text = "R$ ${"%.2f".format(total)}"
     }
 
+    @SuppressLint("RestrictedApi")
     private fun setupConfirmarPedido() {
         binding.btnConfirmarPedido.setOnClickListener {
-            val snackbar = Snackbar.make(binding.root, "Pedido confirmado com sucesso!", Snackbar.LENGTH_SHORT)
-            snackbar.setBackgroundTint(ContextCompat.getColor(this, R.color.verde_snackbar))
-            snackbar.setTextColor(ContextCompat.getColor(this, R.color.white))
-                .show()
+            val snackbar = Snackbar.make(binding.root, "", Snackbar.LENGTH_LONG)
+            val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
+            snackbar.view.setBackgroundColor(Color.TRANSPARENT)
+            snackbar.anchorView = binding.btnConfirmarPedido // Ancora o Snackbar ao botão
+            snackbarLayout.setPadding(0, 0, 0, 0)
+
+            val customSnackbarView = layoutInflater.inflate(R.layout.layout_snackbar_notification, null)
+            snackbarLayout.addView(customSnackbarView, 0)
+
+            snackbar.show()
 
             Handler(Looper.getMainLooper()).postDelayed({
                 startActivity(Intent(this, PerfilActivity::class.java))
                 finish()
-            }, 1500)
-
+            }, 1500) // Aumentei o tempo para 2.5s para dar tempo do shimmer ser visto
         }
     }
 
@@ -95,6 +103,6 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
             binding.tvTaxaEntrega.visibility = View.VISIBLE
             binding.tvTotal.visibility = View.VISIBLE
             setupRecyclerView()
-        }, 3000)
+        }, 2000)
     }
 }

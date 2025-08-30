@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.5">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textViewNomeOpcional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Picles"
@@ -29,13 +29,13 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textViewDescricaoOpcional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="teste" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/textViewValorOpcional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="R$ 10,00"
@@ -58,7 +58,7 @@
         app:layout_constraintGuide_percent="0.74" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageViewOpcional"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -76,13 +76,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintEnd_toStartOf="@+id/textViewQtdOpcional"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.483"
         app:srcCompat="@drawable/ic_menos" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textViewQtdOpcional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

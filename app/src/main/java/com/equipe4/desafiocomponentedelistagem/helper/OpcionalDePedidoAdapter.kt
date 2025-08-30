@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.equipe4.desafiocomponentedelistagem.databinding.OpcionalItemLayoutBinding
 import com.equipe4.desafiocomponentedelistagem.model.Opcional
+import com.equipe4.desafiocomponentedelistagem.view.DetalhesProdutoActivity
 
-class OpcionalDePedidoAdapter(    private val listaOpcionais:List<Opcional>): RecyclerView.Adapter<OpcionalDePedidoAdapter.OpcionalViewHolder>() {
+class OpcionalDePedidoAdapter(    private val listaOpcionais:List<Opcional>,
+                                  private val clique: (Double)->Unit): RecyclerView.Adapter<OpcionalDePedidoAdapter.OpcionalViewHolder>() {
 
     //private var listaOpcionais= mutableListOf<Opcional>()
+    private var valorTotalOpcionais:Double=0.0
 
     inner class OpcionalViewHolder(val binding: OpcionalItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(opcional: Opcional){ //conectar os dados com a interface
@@ -19,10 +22,22 @@ class OpcionalDePedidoAdapter(    private val listaOpcionais:List<Opcional>): Re
             binding.textViewValorOpcional.text="R$ ${opcional.valor}"
             binding.imageViewOpcional.setImageResource(opcional.fotoId)
             binding.textViewQtdOpcional.text="${opcional.qtd}"
-            /*binding.cardView.setOnClickListener {
-                clique(mensagem.nome)
-                // Toast.makeText(cardView.context,"Olá, ${mensagem.nome}!",Toast.LENGTH_SHORT).show()
-            }*/
+            binding.imageViewAddOpcional.setOnClickListener {
+                var qtd=binding.textViewQtdOpcional.text.toString().toInt()+1
+                binding.textViewQtdOpcional.text="$qtd"
+                valorTotalOpcionais+=qtd*opcional.valor
+                clique(opcional.valor)
+            // Toast.makeText(cardView.context,"Olá, ${mensagem.nome}!",Toast.LENGTH_SHORT).show()
+
+            }
+            binding.imageViewMenosOpcional.setOnClickListener {
+                var qtd=binding.textViewQtdOpcional.text.toString().toInt()
+                if (qtd>=1){
+                    binding.textViewQtdOpcional.text="${qtd-1}"
+                    valorTotalOpcionais-=opcional.valor
+                    clique(opcional.valor/-1)
+                }
+            }
         }
    }
 
@@ -47,5 +62,6 @@ class OpcionalDePedidoAdapter(    private val listaOpcionais:List<Opcional>): Re
 
     override fun getItemCount(): Int {
         return listaOpcionais.size
+
     }
 }

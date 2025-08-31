@@ -16,11 +16,11 @@
             android:name=".view.ConfirmacaoPedidoActivity"
             android:exported="false" />
         <activity
-            android:name=".view.PerfilActivity"
+            android:name=".view.DetalhesProdutoActivity"
             android:exported="false" />
 
         <activity
-            android:name=".view.DetalhesProdutoActivity"
+            android:name=".view.PerfilActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

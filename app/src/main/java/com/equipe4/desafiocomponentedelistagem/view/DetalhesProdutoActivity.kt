@@ -30,6 +30,8 @@ class DetalhesProdutoActivity : AppCompatActivity() {
     private var valorTotalPedido:Double=20.0
 
 
+
+
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,15 +45,7 @@ class DetalhesProdutoActivity : AppCompatActivity() {
 
 
 
-        val listaOpcionais= listOf(
-            Opcional("Picles","teste",10.0,R.drawable.picles,0),
-            Opcional("Queijo","Incremente seu lanche com esse sabor",5.0,R.drawable.queijo,0),
-            Opcional("onion rings","Experimente",18.0,R.drawable.onion_rings,0),
-            Opcional("Suco de morango","É uma delicoa",12.0,R.drawable.suco_morango,0),
-            Opcional("Batata frita","Incremente seu lanche com esse sabor",5.0,R.drawable.batata_frita1,0),
-            Opcional("Refri","Refrescante",9.0,R.drawable.refri1,0),
-            Opcional("Água","Incremente seu lanche com esse sabor",5.0,R.drawable.agua1,0)
-        )
+
 
         // este codigo usa para passar pedido da Activity anterior (Detalhes de restaurantes). Para esta tarefa da aula não vamos usar
       /*  val bundle=intent.extras // recuperando os dados da activity Detalhes de restaurantes
@@ -73,6 +67,16 @@ class DetalhesProdutoActivity : AppCompatActivity() {
 
 
             binding.floatingActionButton.setOnClickListener { finish() }
+
+        val listaOpcionais= listOf(
+            Opcional("Picles","teste",10.0,R.drawable.picles,0),
+            Opcional("Queijo","Incremente seu lanche com esse sabor",5.0,R.drawable.queijo,0),
+            Opcional("onion rings","Experimente",18.0,R.drawable.onion_rings,0),
+            Opcional("Suco de morango","É uma delicoa",12.0,R.drawable.suco_morango,0),
+            Opcional("Batata frita","Incremente seu lanche com esse sabor",5.0,R.drawable.batata_frita1,0),
+            Opcional("Refri","Refrescante",9.0,R.drawable.refri1,0),
+            Opcional("Água","Incremente seu lanche com esse sabor",5.0,R.drawable.agua1,0)
+        )
 
         val opcionalDePedidoAdapter=OpcionalDePedidoAdapter(listaOpcionais,{
             valorTotalPedido+=it

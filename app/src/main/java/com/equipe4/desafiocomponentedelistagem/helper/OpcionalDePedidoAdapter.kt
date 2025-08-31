@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.equipe4.desafiocomponentedelistagem.databinding.OpcionalItemLayoutBinding
 import com.equipe4.desafiocomponentedelistagem.model.Opcional
 import com.equipe4.desafiocomponentedelistagem.view.DetalhesProdutoActivity
+import com.equipe4.desafiocomponentedelistagem.view.formatarDoubleComVirgula
 
 class OpcionalDePedidoAdapter(    private val listaOpcionais:List<Opcional>,
                                   private val clique: (Double)->Unit): RecyclerView.Adapter<OpcionalDePedidoAdapter.OpcionalViewHolder>() {
@@ -19,7 +20,7 @@ class OpcionalDePedidoAdapter(    private val listaOpcionais:List<Opcional>,
         fun bind(opcional: Opcional){ //conectar os dados com a interface
             binding.textViewNomeOpcional.text=opcional.nome
             binding.textViewDescricaoOpcional.text=opcional.descricao
-            binding.textViewValorOpcional.text="R$ ${opcional.valor}"
+            binding.textViewValorOpcional.text= formatarDoubleComVirgula(opcional.valor)
             binding.imageViewOpcional.setImageResource(opcional.fotoId)
             binding.textViewQtdOpcional.text="${opcional.qtd}"
             binding.imageViewAddOpcional.setOnClickListener {

@@ -43,6 +43,8 @@ dependencies {
 
     implementation(libs.shimmer)
     implementation(libs.glide)
+    implementation(libs.androidx.legacy.support.v4)
+    annotationProcessor(libs.glide.compiler)
     implementation(libs.imageslideshow)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

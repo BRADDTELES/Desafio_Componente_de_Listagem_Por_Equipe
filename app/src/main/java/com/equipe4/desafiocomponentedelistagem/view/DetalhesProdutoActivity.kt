@@ -12,21 +12,22 @@ import com.equipe4.desafiocomponentedelistagem.databinding.ActivityDetalhesProdu
 import com.equipe4.desafiocomponentedelistagem.helper.OpcionalDePedidoAdapter
 import com.equipe4.desafiocomponentedelistagem.model.Opcional
 import com.equipe4.desafiocomponentedelistagem.R
+import kotlin.math.roundToInt
 
 class DetalhesProdutoActivity : AppCompatActivity() {
 
-   // private lateinit var opcionalDePedidoAdapter: OpcionalDePedidoAdapter
+
     private val binding by lazy { ActivityDetalhesProdutoBinding.inflate(layoutInflater) }
 
-    private lateinit var nomeProdutoPedido: String
-    private lateinit var descricaoProdutoPedido: String
+/*    private lateinit var nomeProdutoPedido: String
+    private lateinit var descricaoProdutoPedido: String*/
     private var valorProdutoPedido:Double=20.0
-    private var valorTotalPedido:Double=0.0
+
 
     private var qtdProdutosPedidos:Int=1
 
 
-
+    private var valorTotalPedido:Double=20.0
 
 
     @SuppressLint("DiscouragedApi")
@@ -44,10 +45,16 @@ class DetalhesProdutoActivity : AppCompatActivity() {
 
         val listaOpcionais= listOf(
             Opcional("Picles","teste",10.0,R.drawable.picles,0),
-            Opcional("Queijo","Incremente seu lanche com esse sabor",5.0,R.drawable.queijo,0)
+            Opcional("Queijo","Incremente seu lanche com esse sabor",5.0,R.drawable.queijo,0),
+            Opcional("onion rings","Experimente",18.0,R.drawable.onion_rings,0),
+            Opcional("Suco de morango","É uma delicoa",12.0,R.drawable.suco_morango,0),
+            Opcional("Batata frita","Incremente seu lanche com esse sabor",5.0,R.drawable.batata_frita1,0),
+            Opcional("Refri","Refrescante",9.0,R.drawable.refri1,0),
+            Opcional("Água","Incremente seu lanche com esse sabor",5.0,R.drawable.agua1,0)
         )
 
-        val bundle=intent.extras // recuperando os dados da activity Detalhes de restaurantes
+        // este codigo usa para passar pedido da Activity anterior (Detalhes de restaurantes). Para esta tarefa da aula não vamos usar
+      /*  val bundle=intent.extras // recuperando os dados da activity Detalhes de restaurantes
         if(bundle!=null) {
             nomeProdutoPedido=bundle.getString("nomeProduto","Combo Hamburger+Batata+MilkShake")
             descricaoProdutoPedido = bundle.getString("descricaoProduto","Combo completo para animar seu final de semana")
@@ -61,13 +68,15 @@ class DetalhesProdutoActivity : AppCompatActivity() {
 
         }
         valorTotalPedido=valorProdutoPedido
+        */
+
 
 
             binding.floatingActionButton.setOnClickListener { finish() }
 
         val opcionalDePedidoAdapter=OpcionalDePedidoAdapter(listaOpcionais,{
             valorTotalPedido+=it
-            binding.textViewValorTotalDoPedido.text="R$ $valorTotalPedido"
+            binding.textViewValorTotalDoPedido.text=formatarDoubleComVirgula(valorTotalPedido)
         })
         binding.recyclerViewOpcionais.adapter= opcionalDePedidoAdapter
         binding.recyclerViewOpcionais.layoutManager= LinearLayoutManager(this)
@@ -84,7 +93,7 @@ class DetalhesProdutoActivity : AppCompatActivity() {
                 qtdProdutosPedidos=binding.textViewQtdProdutosPedidos.text.toString().toInt()-1
                 binding.textViewQtdProdutosPedidos.text="$qtdProdutosPedidos"
                 valorTotalPedido-=valorProdutoPedido
-                binding.textViewValorTotalDoPedido.text="R$ ${valorTotalPedido}"
+                binding.textViewValorTotalDoPedido.text=formatarDoubleComVirgula(valorTotalPedido)
             }
         }
 
@@ -92,18 +101,29 @@ class DetalhesProdutoActivity : AppCompatActivity() {
             qtdProdutosPedidos=binding.textViewQtdProdutosPedidos.text.toString().toInt()+1
             binding.textViewQtdProdutosPedidos.text="$qtdProdutosPedidos"
             valorTotalPedido+=valorProdutoPedido
-            binding.textViewValorTotalDoPedido.text="R$ ${valorTotalPedido}"
+
+
+            binding.textViewValorTotalDoPedido.text= formatarDoubleComVirgula(valorTotalPedido)
         }
 
         binding.btnConfirmarPedido.setOnClickListener {
             val intent=Intent(this, PerfilActivity::class.java)
-            /*val intent=Intent(this,ConfirmacaoPedidoActivity::class.java)
-            intent.putExtra("nomeProdutoPedido",)
-            intent.putExtra("qtdProdutosPedidos",qtdProdutosPedidos)
-            intent.putExtra("valorProdutoPedido",qtdProdutosPedidos)
-                ..*/
+            // !! Precisa mudar intent pelo este:
+           // val intent=Intent(this, ConfirmacaoPedidoActivity::class.java)
+
+
             startActivity(intent)
         }
 
+    }
+}
+
+public fun formatarDoubleComVirgula(valor: Double): String {
+    // formatando valor de saida Ex.(20.00)-> R$ 20,00
+    val decimal=((valor-valor.roundToInt())*100).roundToInt()
+    if (decimal<10){
+        return "R$ ${valor.roundToInt()},0${decimal}"
+    } else {
+        return "R$ ${valor.roundToInt()},${decimal}"
     }
 }

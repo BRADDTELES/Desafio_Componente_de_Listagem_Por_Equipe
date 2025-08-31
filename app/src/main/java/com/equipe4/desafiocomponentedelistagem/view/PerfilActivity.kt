@@ -1,7 +1,11 @@
 package com.equipe4.desafiocomponentedelistagem.view
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -46,13 +50,30 @@ class PerfilActivity : AppCompatActivity() {
         binding.tvNomeUsuario.text = usuario.nome
     }
 
+    @SuppressLint("RestrictedApi")
     private fun setupRecyclerView() {
         categoriaAdapter = CategoriaAdapter{ categoria, position ->
-            startActivity(Intent(this, ConfirmacaoPedidoActivity::class.java))
-            /*val snackbar = Snackbar.make(binding.root, "Item ${categoria.nome} navegando para a Tela Inicial", Snackbar.LENGTH_SHORT)
-            snackbar.setBackgroundTint(ContextCompat.getColor(this, R.color.verde_snackbar))
-                snackbar.setTextColor(ContextCompat.getColor(this, R.color.white))
-                .show()*/
+            when(position) {
+                0 -> { startActivity(Intent(this, ConfirmacaoPedidoActivity::class.java)) }
+                else -> {
+                    val snackbar = Snackbar.make(binding.root, "", Snackbar.LENGTH_LONG)
+                    val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
+
+                    snackbar.anchorView = binding.materialCardView
+
+                    val params = snackbarLayout.layoutParams as FrameLayout.LayoutParams
+                    params.gravity = Gravity.BOTTOM
+                    snackbarLayout.layoutParams = params
+
+                    snackbar.view.setBackgroundColor(Color.TRANSPARENT)
+                    snackbarLayout.setPadding(0, 0, 0, 0)
+
+                    val customSnackbarView = layoutInflater.inflate(R.layout.layout_snackbar_notification_aviso, null)
+                    snackbarLayout.addView(customSnackbarView, 0)
+
+                    snackbar.show()
+                }
+            }
         }
         binding.rvCategorias.adapter = categoriaAdapter
         binding.rvCategorias.layoutManager = LinearLayoutManager(this)

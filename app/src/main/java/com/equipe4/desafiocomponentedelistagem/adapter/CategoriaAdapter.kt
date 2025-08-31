@@ -48,12 +48,15 @@ class CategoriaAdapter(
                 binding.tvNotificationCategoria.text = ""
             }
 
+
+            binding.root.setOnClickListener { onClick(categoria, position) }
+            /* Para aplicar que somente um item da lista seja clicável
             if (position == 0) {
                 binding.root.setOnClickListener { onClick(categoria, position) }
             } else {
                 binding.root.setOnClickListener(null)
                 binding.root.isClickable = false
-            }
+            }*/
         }
     }
 }

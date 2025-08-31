@@ -1,4 +1,4 @@
-package com.equipe4.desafiocomponentedelistagem.helper
+package com.equipe4.desafiocomponentedelistagem.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.equipe4.desafiocomponentedelistagem.databinding.OpcionalItemLayoutBinding
 import com.equipe4.desafiocomponentedelistagem.model.Opcional
-import com.equipe4.desafiocomponentedelistagem.view.DetalhesProdutoActivity
 import com.equipe4.desafiocomponentedelistagem.view.formatarDoubleComVirgula
 
 class OpcionalDePedidoAdapter(    private val listaOpcionais:List<Opcional>,

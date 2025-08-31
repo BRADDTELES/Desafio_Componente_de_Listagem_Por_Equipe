@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.equipe4.desafiocomponentedelistagem.databinding.ActivityDetalhesProdutoBinding
-import com.equipe4.desafiocomponentedelistagem.helper.OpcionalDePedidoAdapter
+import com.equipe4.desafiocomponentedelistagem.adapter.OpcionalDePedidoAdapter
 import com.equipe4.desafiocomponentedelistagem.model.Opcional
 import com.equipe4.desafiocomponentedelistagem.R
 import kotlin.math.roundToInt

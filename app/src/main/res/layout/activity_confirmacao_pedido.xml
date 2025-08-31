@@ -27,6 +27,13 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="16dp" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="72dp" />
+
         <ImageView
             android:id="@+id/btnVoltar"
             android:layout_width="48dp"
@@ -55,17 +62,18 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/lato_bold"
             android:text="Itens adicionados"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/btnVoltar" />
+            app:layout_constraintTop_toTopOf="@+id/guideline_top_horizontal" />
 
         <FrameLayout
             android:id="@+id/list_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="@+id/guideline_end"
             app:layout_constraintHeight_percent="0.4"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
@@ -254,6 +262,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
             app:layout_constraintVertical_bias="1.0" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

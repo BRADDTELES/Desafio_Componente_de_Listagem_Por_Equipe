@@ -4,18 +4,19 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.view.Gravity
 import android.view.View
-import android.widget.Toast
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.equipe4.desafiocomponentedelistagem.R
 import com.equipe4.desafiocomponentedelistagem.adapter.ItemProdutoOpcionaisAdapter
 import com.equipe4.desafiocomponentedelistagem.databinding.ActivityConfirmacaoPedidoBinding
 import com.equipe4.desafiocomponentedelistagem.model.ItemProdutoOpcionais
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class ConfirmacaoPedidoActivity : AppCompatActivity() {
 
@@ -61,18 +62,35 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
             val snackbar = Snackbar.make(binding.root, "", Snackbar.LENGTH_LONG)
             val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout
             snackbar.view.setBackgroundColor(Color.TRANSPARENT)
-            snackbar.anchorView = binding.btnConfirmarPedido // Ancora o Snackbar ao botão
+
+            snackbar.anchorView = binding.guidelineTopHorizontal // Ancora o Snackbar
+
+            val params = snackbarLayout.layoutParams as FrameLayout.LayoutParams
+            params.gravity = Gravity.BOTTOM
+            snackbarLayout.layoutParams = params
+
             snackbarLayout.setPadding(0, 0, 0, 0)
 
             val customSnackbarView = layoutInflater.inflate(R.layout.layout_snackbar_notification, null)
             snackbarLayout.addView(customSnackbarView, 0)
 
+            customSnackbarView.apply {
+                alpha = 0f
+                translationY = -50f
+                animate()
+                    .alpha(1f)
+                    .translationY(0f)
+                    .setDuration(500)
+                    .start()
+            }
+
             snackbar.show()
 
-            Handler(Looper.getMainLooper()).postDelayed({
-                startActivity(Intent(this, PerfilActivity::class.java))
+            lifecycleScope.launch {
+                delay(1500)
+                startActivity(Intent(this@ConfirmacaoPedidoActivity, PerfilActivity::class.java))
                 finish()
-            }, 1500) // Aumentei o tempo para 2.5s para dar tempo do shimmer ser visto
+            }
         }
     }
 
@@ -92,8 +110,8 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
     private fun setupShimmerFacebook() {
         binding.shimmerViewContainer.startShimmer()
 
-        // Simula um tempo de carregamento de 2 segundos
-        Handler(Looper.getMainLooper()).postDelayed({
+        lifecycleScope.launch {
+            delay(2000)
             binding.shimmerViewContainer.stopShimmer()
             binding.shimmerViewContainerTextPrice.stopShimmer()
             binding.shimmerViewContainer.visibility = View.GONE
@@ -103,6 +121,6 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
             binding.tvTaxaEntrega.visibility = View.VISIBLE
             binding.tvTotal.visibility = View.VISIBLE
             setupRecyclerView()
-        }, 2000)
+        }
     }
 }

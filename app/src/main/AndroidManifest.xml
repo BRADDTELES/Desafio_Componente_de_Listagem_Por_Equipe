@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesafioComponenteDeListagem"
         tools:targetApi="31">
+
+        <activity
+            android:name=".view.DetalhesProdutoActivity"
+            android:exported="false" />
+        <activity android:name=".view.DetalhesRestauranteActivity"
+            android:exported="false"/>
         <activity
             android:name=".view.PerfilActivity"
             android:exported="true">

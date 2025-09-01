@@ -19,6 +19,9 @@
             android:name=".view.DetalhesRestauranteActivity"
             android:exported="false" />
         <activity
+            android:name=".view.tela_inicial_restaurantes"
+            android:exported="false" />
+        <activity
             android:name=".view.ConfirmacaoPedidoActivity"
             android:exported="false" />
         <activity

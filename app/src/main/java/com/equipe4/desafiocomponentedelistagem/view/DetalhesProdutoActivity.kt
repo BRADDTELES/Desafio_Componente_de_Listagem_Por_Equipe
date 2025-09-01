@@ -95,9 +95,9 @@ class DetalhesProdutoActivity : AppCompatActivity() {
         }
 
         binding.btnConfirmarPedido.setOnClickListener {
-            val intent=Intent(this, PerfilActivity::class.java)
-            // !! Precisa mudar intent pelo este:
-           // val intent=Intent(this, ConfirmacaoPedidoActivity::class.java)
+           // val intent=Intent(this, PerfilActivity::class.java)
+
+            val intent=Intent(this, ConfirmacaoPedidoActivity::class.java)
             startActivity(intent)
         }
     }

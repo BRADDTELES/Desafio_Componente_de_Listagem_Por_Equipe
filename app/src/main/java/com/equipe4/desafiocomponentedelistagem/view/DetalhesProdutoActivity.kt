@@ -16,21 +16,15 @@ import kotlin.math.roundToInt
 
 class DetalhesProdutoActivity : AppCompatActivity() {
 
-
     private val binding by lazy { ActivityDetalhesProdutoBinding.inflate(layoutInflater) }
 
 /*    private lateinit var nomeProdutoPedido: String
     private lateinit var descricaoProdutoPedido: String*/
     private var valorProdutoPedido:Double=20.0
 
-
     private var qtdProdutosPedidos:Int=1
 
-
     private var valorTotalPedido:Double=20.0
-
-
-
 
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,11 +37,7 @@ class DetalhesProdutoActivity : AppCompatActivity() {
             insets
         }
 
-
-
-
-
-        // este codigo usa para passar pedido da Activity anterior (Detalhes de restaurantes). Para esta tarefa da aula não vamos usar
+      // este codigo usa para passar pedido da Activity anterior (Detalhes de restaurantes). Para esta tarefa da aula não vamos usar
       /*  val bundle=intent.extras // recuperando os dados da activity Detalhes de restaurantes
         if(bundle!=null) {
             nomeProdutoPedido=bundle.getString("nomeProduto","Combo Hamburger+Batata+MilkShake")
@@ -63,9 +53,6 @@ class DetalhesProdutoActivity : AppCompatActivity() {
         }
         valorTotalPedido=valorProdutoPedido
         */
-
-
-
             binding.floatingActionButton.setOnClickListener { finish() }
 
         val listaOpcionais= listOf(
@@ -88,9 +75,6 @@ class DetalhesProdutoActivity : AppCompatActivity() {
             valorTotalPedido+=opcionalDePedidoAdapter.valorTotalOpcionais
             binding.textViewValorTotalDoPedido.text="R$ $valorTotalPedido"
         }*/
-
-
-
         binding.imageViewMenosProdutos.setOnClickListener {
             qtdProdutosPedidos= binding.textViewQtdProdutosPedidos.text.toString().toInt()
             if (qtdProdutosPedidos>=1){
@@ -114,11 +98,8 @@ class DetalhesProdutoActivity : AppCompatActivity() {
             val intent=Intent(this, PerfilActivity::class.java)
             // !! Precisa mudar intent pelo este:
            // val intent=Intent(this, ConfirmacaoPedidoActivity::class.java)
-
-
             startActivity(intent)
         }
-
     }
 }
 

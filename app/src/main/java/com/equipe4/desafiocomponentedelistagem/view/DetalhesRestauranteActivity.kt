@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView:wq
+import androidx.recyclerview.widget.RecyclerView
 import com.equipe4.desafiocomponentedelistagem.R
 import com.equipe4.desafiocomponentedelistagem.adapter.ProdutosAdapter
 import com.equipe4.desafiocomponentedelistagem.adapter.ProdutosDestaqueAdapter

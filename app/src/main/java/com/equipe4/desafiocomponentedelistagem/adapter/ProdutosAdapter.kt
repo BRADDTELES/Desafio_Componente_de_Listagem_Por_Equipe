@@ -22,8 +22,9 @@ class ProdutosAdapter(
 
         init {
             view.setOnClickListener {
-                if (adapterPosition != RecyclerView.NO_POSITION) {
-                    val produtoClicado = produtos[adapterPosition]
+                val position = bindingAdapterPosition // <- substitui adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val produtoClicado = produtos[position]
                     onItemClicked(produtoClicado)
                 }
             }

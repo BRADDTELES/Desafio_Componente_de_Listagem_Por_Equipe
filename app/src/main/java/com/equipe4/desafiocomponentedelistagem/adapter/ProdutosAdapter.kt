@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.equipe4.desafiocomponentedelistagem.R
+import com.equipe4.desafiocomponentedelistagem.model.Produtos
 
 class ProdutosAdapter(
     private val produtos: List<Produtos>,

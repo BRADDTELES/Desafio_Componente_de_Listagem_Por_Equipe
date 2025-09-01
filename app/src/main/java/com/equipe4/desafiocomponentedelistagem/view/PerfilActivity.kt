@@ -54,7 +54,7 @@ class PerfilActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         categoriaAdapter = CategoriaAdapter{ categoria, position ->
             when(position) {
-                0 -> { startActivity(Intent(this, ConfirmacaoPedidoActivity::class.java)) }
+                0 -> { startActivity(Intent(this, InicialRestauranteActivity::class.java)) }
                 else -> {
                     val snackbar = Snackbar.make(binding.root, "", Snackbar.LENGTH_LONG)
                     val snackbarLayout = snackbar.view as Snackbar.SnackbarLayout

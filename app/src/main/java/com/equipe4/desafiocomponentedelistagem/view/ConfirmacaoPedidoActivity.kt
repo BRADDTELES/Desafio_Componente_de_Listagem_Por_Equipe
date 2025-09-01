@@ -88,7 +88,7 @@ class ConfirmacaoPedidoActivity : AppCompatActivity() {
 
             lifecycleScope.launch {
                 delay(1500)
-                startActivity(Intent(this@ConfirmacaoPedidoActivity, PerfilActivity::class.java))
+                startActivity(Intent(this@ConfirmacaoPedidoActivity, InicialRestauranteActivity::class.java))
                 finish()
             }
         }

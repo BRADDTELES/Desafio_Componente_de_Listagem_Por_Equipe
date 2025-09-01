@@ -1,4 +1,4 @@
-package com.equipe4.desafiocomponentedelistagem.view
+package com.equipe4.desafiocomponentedelistagem.adapter
 
 import android.view.LayoutInflater
 import android.view.View

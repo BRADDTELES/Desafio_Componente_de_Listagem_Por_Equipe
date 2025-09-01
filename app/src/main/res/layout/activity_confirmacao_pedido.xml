@@ -34,7 +34,7 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="72dp" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/btnVoltar"
             android:layout_width="48dp"
             android:layout_height="48dp"

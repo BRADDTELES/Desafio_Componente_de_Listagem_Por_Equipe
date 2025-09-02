@@ -2,10 +2,7 @@ package com.equipe4.desafiocomponentedelistagem.view
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.equipe4.desafiocomponentedelistagem.R
 import com.equipe4.desafiocomponentedelistagem.adapter.LojaAdapter
@@ -46,8 +43,5 @@ class InicialRestauranteActivity : AppCompatActivity() {
         binding.rvLojas.layoutManager = LinearLayoutManager(this)
         lojaAdapter.submitList(listaLojas)
     }
-
-
-
 
 }

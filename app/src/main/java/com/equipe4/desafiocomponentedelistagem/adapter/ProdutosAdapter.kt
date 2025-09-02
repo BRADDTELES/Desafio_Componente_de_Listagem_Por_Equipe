@@ -1,4 +1,4 @@
-package com.equipe4.desafiocomponentedelistagem.view
+package com.equipe4.desafiocomponentedelistagem.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.equipe4.desafiocomponentedelistagem.R
+import com.equipe4.desafiocomponentedelistagem.model.Produtos
 
 class ProdutosAdapter(
     private val produtos: List<Produtos>,
@@ -21,8 +22,9 @@ class ProdutosAdapter(
 
         init {
             view.setOnClickListener {
-                if (adapterPosition != RecyclerView.NO_POSITION) {
-                    val produtoClicado = produtos[adapterPosition]
+                val position = bindingAdapterPosition // <- substitui adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val produtoClicado = produtos[position]
                     onItemClicked(produtoClicado)
                 }
             }

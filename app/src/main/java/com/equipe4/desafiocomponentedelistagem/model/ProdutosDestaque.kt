@@ -1,4 +1,4 @@
-package com.equipe4.desafiocomponentedelistagem.view
+package com.equipe4.desafiocomponentedelistagem.model
 
 data class ProdutosDestaque(
     val nome: String,

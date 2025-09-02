@@ -8,13 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.equipe4.desafiocomponentedelistagem.R
+import com.equipe4.desafiocomponentedelistagem.adapter.ProdutosAdapter
+import com.equipe4.desafiocomponentedelistagem.adapter.ProdutosDestaqueAdapter
+import com.equipe4.desafiocomponentedelistagem.model.Produtos
+import com.equipe4.desafiocomponentedelistagem.model.ProdutosDestaque
 
 class DetalhesRestauranteActivity : AppCompatActivity() { // Activity principal (metade superior: imagens | metade inferior: lista)
 
-    /*private lateinit var recyclerHorizontal: RecyclerView
-    private lateinit var recyclerVertical: RecyclerView*/
-
-    override fun onCreate(savedInstanceState: Bundle?) { // Método chamado ao criar a Activity
+     override fun onCreate(savedInstanceState: Bundle?) { // Método chamado ao criar a Activity
         super.onCreate(savedInstanceState)               // Chama implementação da superclasse
         setContentView(R.layout.activity_detalhes_restaurante)           // Associa o layout XML desta tela
 

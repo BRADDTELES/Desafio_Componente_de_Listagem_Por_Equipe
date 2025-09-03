@@ -31,8 +31,6 @@ class InicialRestauranteActivity : AppCompatActivity() {
         setupRecyclerView()
     }
 
-        setupNavegar()
-    }
 
     private fun setupRecyclerView() {
         lojaAdapter = LojaAdapter { loja ->

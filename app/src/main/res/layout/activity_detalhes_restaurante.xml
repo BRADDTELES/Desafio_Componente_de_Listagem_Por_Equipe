@@ -20,10 +20,10 @@
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
-        android:background="@drawable/circle_white_bg"
+        android:background="@drawable/circulo_branco"
         android:contentDescription="@string/label_back"
         android:elevation="8dp"
-        android:src="@drawable/ic_arrow_back"
+        android:src="@drawable/ic_seta_esquerda"
         android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/imgCapa" />

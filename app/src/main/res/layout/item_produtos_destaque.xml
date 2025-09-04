@@ -13,7 +13,7 @@
         android:layout_marginEnd="16dp"
         android:background="@android:color/darker_gray"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/destaque1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -34,9 +34,15 @@ class InicialRestauranteActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         lojaAdapter = LojaAdapter { loja ->
-            val intent = Intent(this, DetalhesRestauranteActivity::class.java)
-            startActivity(intent)
+            if (loja.nome == "Outback Steakhouse") {
+                val intent = Intent(this, DetalhesRestauranteActivity::class.java)
+                // 🔹 Caso precise passar dados para a tela seguinte:
+                intent.putExtra("NOME_LOJA", loja.nome)
+                intent.putExtra("ID_LOJA", loja.id)
+                startActivity(intent)
+            }
         }
+
         binding.rvLojas.adapter = lojaAdapter
         binding.rvLojas.layoutManager = LinearLayoutManager(this)
         lojaAdapter.submitList(listaLojas)

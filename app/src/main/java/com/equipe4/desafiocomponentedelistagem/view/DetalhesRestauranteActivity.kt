@@ -50,11 +50,11 @@ class DetalhesRestauranteActivity : AppCompatActivity() { // Activity principal 
     // ------------------------------
     private fun gerarListaHorizontal(): List<ProdutosDestaque> {
         return listOf(
-            ProdutosDestaque("Chicken on the Barbie", "R$ 74,90", R.drawable.destaque1),
-            ProdutosDestaque("Chicken Fingers Jumbo", "R$ 74,90", R.drawable.destaque2),
-            ProdutosDestaque("Smoked Cheeseburger", "R$ 49,90", R.drawable.destaque3),
-            ProdutosDestaque("The Outbacker", "R$ 62,90", R.drawable.destaque4),
-            ProdutosDestaque("Toowoomba Pasta", "R$ 84,90", R.drawable.destaque5)
+            ProdutosDestaque("Chicken on the Barbie", "R$ 74,90", R.drawable.destaque10),
+            ProdutosDestaque("Chicken Fingers Jumbo", "R$ 74,90", R.drawable.destaque20),
+            ProdutosDestaque("Smoked Cheeseburger", "R$ 49,90", R.drawable.destaque30),
+            ProdutosDestaque("The Outbacker", "R$ 62,90", R.drawable.destaque40),
+            ProdutosDestaque("Toowoomba Pasta", "R$ 84,90", R.drawable.destaque50)
         )
     }
 
@@ -65,28 +65,28 @@ class DetalhesRestauranteActivity : AppCompatActivity() { // Activity principal 
             Produtos(
                 "Chicken on the Barbie",
                 "Um suculento peito de frango grelhado em chama aberta, seervido com o molho Barbecue.",
-                "R\$ 74,90",
-                R.drawable.destaque1),
+                "R$ 74,90",
+                R.drawable.destaque10),
             Produtos(
                 "Chicken Fingers Jumbo",
                 "4 pedaços crocantes de peito de frango empanado para você mergulhar no delicioso molho Honey Mustard.",
                 "R$ 74,90",
-                R.drawable.destaque2),
+                R.drawable.destaque20),
             Produtos(
                 "Smoked Cheeseburger",
                 "200g de hambúrger da casa no pão tipo brioche, queijo tipo cheddar, queijo tipo ementhal, cubos de cebola ...",
                 "R$ 49,90",
-                R.drawable.destaque3),
+                R.drawable.destaque30),
             Produtos(
                 "The Outbacker",
                 "200g de hambúrguer de carne, queijo, picles, tomate, alface, cebola, maionese um acompanhamento...",
                 "R$ 62,90",
-                R.drawable.destaque4),
+                R.drawable.destaque40),
             Produtos(
                 "Toowoomba Pasta",
                 "Uma combinação perfeita de camarões e champignons, temperada com ervas finas e servida com fettuccine...",
                 "R$ 84,90",
-                R.drawable.destaque5)
+                R.drawable.destaque50)
 
         )
     }

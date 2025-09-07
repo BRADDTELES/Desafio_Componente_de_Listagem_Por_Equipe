@@ -7,13 +7,6 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-
 .idea/gradle.xml
 .idea/misc.xml
 .idea/runConfigurations.xml
@@ -21,9 +14,14 @@ local.properties
 .idea/vcs.xml
 .idea/compiler.xml
 .idea/MarsCodeWorkspaceAppSettings.xml
-
+.idea/deviceManager.xml
+.idea/material_theme_project_new.xml
 .idea/
-
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
 # Ou, se você quer ser mais específico e permitir alguns arquivos .idea (menos comum para os que foram adicionados):
 # .idea/*.xml
 # Mas exclua os que podem ser compartilhados, se aplicável:

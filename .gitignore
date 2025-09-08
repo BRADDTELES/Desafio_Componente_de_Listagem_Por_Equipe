@@ -21,3 +21,11 @@ local.properties
 .idea/vcs.xml
 .idea/compiler.xml
 .idea/MarsCodeWorkspaceAppSettings.xml
+
+.idea/
+
+# Ou, se você quer ser mais específico e permitir alguns arquivos .idea (menos comum para os que foram adicionados):
+# .idea/*.xml
+# Mas exclua os que podem ser compartilhados, se aplicável:
+# !.idea/codeStyles/
+# !.idea/runConfigurations/

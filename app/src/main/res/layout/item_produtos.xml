@@ -1,57 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!-- Container vertical para os textos -->
-    <LinearLayout
-        android:id="@+id/linearTextos"
+    <!-- Nome do produto -->
+
+    <!-- Descrição do produto -->
+
+    <!-- Preço do produto -->
+
+    <TextView
+        android:id="@+id/txtProdutoNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Nome Produto"
+        android:textSize="12dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgProdutoItem" />
+
+    <TextView
+        android:id="@+id/txtProdutoDescricao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginStart="0dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="descricao_produto"
+        android:textSize="10dp"
+        android:singleLine="false"
+        android:maxLines="2"
+        android:lines="2"
+        android:ellipsize="end"
         app:layout_constraintEnd_toStartOf="@+id/imgProdutoItem"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtProdutoNome" />
 
-        <TextView
-            android:id="@+id/txtProdutoNome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nome Produto"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="0dp"/>
+    <!-- Imagem do produto -->
+    <TextView
+        android:id="@+id/txtProdutoPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="R$ 99,90"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProdutoDescricao" />
 
-        <TextView
-            android:id="@+id/txtProdutoDescricao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="descricao_produto"
-            android:layout_marginEnd="2dp"
-            android:textSize="12sp"
-            />
-
-        <TextView
-            android:id="@+id/txtProdutoPreco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="R$ 99,90"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="14sp"
-            android:layout_marginBottom="4dp"/>
-    </LinearLayout>
-
-    <!-- Logo do restaurante -->
     <ImageView
         android:id="@+id/imgProdutoItem"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/destaque1"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/destaque10"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
